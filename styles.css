@@ -1,8 +1,33 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
     margin: 0;
     padding: 0;
+    animation: changeBackground 9s infinite;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 100vh; /* Ensure the background covers the full viewport height */
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+}
+
+.header-content h1 {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+}
+
+.header-content img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
 }
 
 .container {
@@ -10,9 +35,16 @@ body {
     margin-top: 50px;
 }
 
-h1 {
+.info-box {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
     margin-bottom: 20px;
-    color: #333;
+}
+
+.info-box h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
 }
 
 button {
@@ -42,7 +74,7 @@ button:hover {
 
 .news-item h2 {
     margin-top: 0;
-    color: #e50914; /* Netflix red color */
+    color: #e50914;
     font-size: 24px;
 }
 
@@ -64,4 +96,25 @@ button:hover {
     background-color: #c40813;
 }
 
-/* Rest of your CSS styles */
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .header-content img {
+        margin: 0 auto 10px;
+    }
+}
+
+@keyframes changeBackground {
+    0%, 100% {
+        background-image: url('https://www.un.org/sites/un2.un.org/files/frontpage05-jpg.jpg');
+    }
+    33.33% {
+        background-image: url('https://media.istockphoto.com/id/1339138376/photo/climate-change-from-drought-to-green-growth.jpg?s=612x612&w=0&k=20&c=05aOfOV32_8Ow5cgcRFV6vcKdmxvD2LHqWxiiZXi2pU=');
+    }
+    66.66% {
+        background-image: url('https://img.ehstoday.com/files/base/ebm/ehstoday/image/2022/03/dreamstime_l_160710620.6222400eeb9c2.png?auto=format,compress&fit=fill&fill=blur&w=1200&h=630');
+    }
+}

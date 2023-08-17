@@ -1,5 +1,10 @@
+const refreshButton = document.getElementById('refreshButton');
 const fetchNewsButton = document.getElementById('fetchNewsButton');
 const newsListContainer = document.getElementById('newsList');
+
+refreshButton.addEventListener('click', () => {
+    location.reload(); // Reload the page
+});
 
 fetchNewsButton.addEventListener('click', async () => {
     const url = 'https://climate-news-feed.p.rapidapi.com/page/1?limit=10';

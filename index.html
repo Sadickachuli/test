@@ -3,13 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Climate News App</title>
+    <title>EcoTrends - Latest Climate News</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <header>
+      <div class="header-content">
+        <h1><img src="icon.jpg" alt="EcoTrends Logo" /> EcoTrends</h1>
+        <button id="refreshButton">Refresh</button>
+      </div>
+    </header>
     <div class="container">
-      <h1>Climate News App</h1>
-      <button id="fetchNewsButton">Fetch Climate News</button>
+      <div class="info-box">
+        <h2>Welcome to EcoTrends</h2>
+        <p>
+          Your source for the latest climate news from trusted sources such as
+          NASA, UN, and more.
+        </p>
+      </div>
+      <button id="fetchNewsButton">LATEST CLIMATE NEWS</button>
       <div id="newsList"></div>
     </div>
     <script src="script.js"></script>
