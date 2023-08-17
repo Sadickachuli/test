@@ -2,6 +2,10 @@
 
 EcoTrends is a web application that provides users with the latest climate news from trusted sources, such as NASA and UN. Stay informed about climate-related developments and issues with just a click.
 
+## Screenshot
+
+![EcoTrends Screenshot](screenshot.png)
+
 ## Description
 
 EcoTrends is a web application built to keep users updated with the latest climate news. It fetches news articles from various trusted sources related to climate and environment. Users can easily access news articles, read more about each topic, and stay informed about ongoing environmental discussions.
@@ -32,10 +36,6 @@ Contributions are welcome! If you find any issues or have suggestions for improv
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Screenshot
-
-![EcoTrends Screenshot](screenshot.png)
 
 ---
 
