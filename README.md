@@ -1,7 +1,7 @@
 # EcoTrends - Latest Climate News
 
-EcoTrends is a web application that provides users with the latest climate news from trusted sources, such as NASA and UN. Stay informed about climate-related developments and issues with just a click.
-
+EcoTrends is a web application that provides users with the latest climate news from trusted sources, such as NASA and UN. Stay informed about climate-related developments and issues with just a click. 
+## link to demo video: https://screenrec.com/share/MOQdlzSBR7
 ![EcoTrends Screenshot](screenshot.png)
 
 ## Description
