@@ -3,7 +3,7 @@ const fetchNewsButton = document.getElementById('fetchNewsButton');
 const newsListContainer = document.getElementById('newsList');
 
 refreshButton.addEventListener('click', () => {
-    location.reload(); // Reload the page
+    location.reload(); 
 });
 
 fetchNewsButton.addEventListener('click', async () => {
@@ -18,15 +18,15 @@ fetchNewsButton.addEventListener('click', async () => {
     
     try {
         const response = await fetch(url, options);
-        const result = await response.json(); // Parse JSON response
-        displayNews(result.articles); // Modify this line
+        const result = await response.json(); 
+        displayNews(result.articles); 
     } catch (error) {
         console.error(error);
     }
 });
 
 function displayNews(data) {
-    newsListContainer.innerHTML = ''; // Clear previous content
+    newsListContainer.innerHTML = ''; 
     
     if (Array.isArray(data)) {
         for (const news of data) {

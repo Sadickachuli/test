@@ -2,21 +2,35 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    animation: changeBackground 9s infinite;
+    animation: changeBackground 35s infinite;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    min-height: 100vh; /* Ensure the background covers the full viewport height */
+    min-height: 100vh; 
+}
+
+header {
+    height: 10px;
 }
 
 .header-content {
     display: flex;
+    height: 50px;
     justify-content: space-between;
+    color: white;
     align-items: center;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #fff;
+    background-image: url('https://www.whoi.edu/wp-content/uploads/2021/08/GreenlandCover_C16x9.jpg');
+    background-size: cover;
+    background-position: center center;
+    padding: 10px 20px; 
+    background-color: white; 
+    position: fixed; 
+    top: 0; 
+    width: 100%; 
+    z-index: 999; 
 }
+
+
 
 .header-content h1 {
     display: flex;
@@ -37,21 +51,37 @@ body {
 
 .info-box {
     background-color: rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
+    padding: 60px;
+    color:red;
+    border-radius: 50px;
+    margin-bottom: 90px;
+    
 }
 
 .info-box h2 {
     font-size: 24px;
     margin-bottom: 10px;
+    font-size: 40px;
+}
+
+.info-box p {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: black;
+    
+}
+
+.emphasis {
+    font-weight: bold;
+    color: beige;
 }
 
 button {
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 26px;
     border: none;
     border-radius: 8px;
+    height: 90px;
     background-color: #4285f4;
     color: #fff;
     cursor: pointer;
@@ -109,12 +139,12 @@ button:hover {
 
 @keyframes changeBackground {
     0%, 100% {
-        background-image: url('https://www.un.org/sites/un2.un.org/files/frontpage05-jpg.jpg');
+        background-image: url('https://www.noaa.gov/sites/default/files/styles/landscape_width_1275/public/2022-03/PHOTO-Climate-Collage-Diagonal-Design-NOAA-Communications-NO-NOAA-Logo.jpg');
     }
     33.33% {
-        background-image: url('https://media.istockphoto.com/id/1339138376/photo/climate-change-from-drought-to-green-growth.jpg?s=612x612&w=0&k=20&c=05aOfOV32_8Ow5cgcRFV6vcKdmxvD2LHqWxiiZXi2pU=');
+        background-image: url('https://uniteforchange.com/images/2022/06/sm/Blog-Images2@2x.jpg');
     }
     66.66% {
-        background-image: url('https://img.ehstoday.com/files/base/ebm/ehstoday/image/2022/03/dreamstime_l_160710620.6222400eeb9c2.png?auto=format,compress&fit=fill&fill=blur&w=1200&h=630');
+        background-image: url('https://images.thequint.com/thequint/2023-02/3920cc1a-15bc-478e-ac89-8d9d8046e6f9/Climate_Change.jpg?auto=format,compress&fmt=webp&format=webp&w=1200&h=900&dpr=1.0');
     }
 }
