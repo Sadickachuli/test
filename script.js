@@ -1,35 +1,54 @@
-const recommendButton = document.getElementById('recommendButton');
-const genreSelect = document.getElementById('genre');
-const movieList = document.getElementById('movieList');
+const fetchNewsButton = document.getElementById('fetchNewsButton');
+const newsListContainer = document.getElementById('newsList');
 
-const apiKey = 'YOUR_TMDB_API_KEY'; // Replace with your TMDb API key
-
-recommendButton.addEventListener('click', () => {
-    const selectedGenre = genreSelect.value;
-    getRecommendations(selectedGenre);
+fetchNewsButton.addEventListener('click', async () => {
+    const url = 'https://climate-news-feed.p.rapidapi.com/page/1?limit=10';
+    const options = {
+        method: 'GET',
+    };
+    
+    options.headers = new Headers();
+    options.headers.append('X-RapidAPI-Key', 'ae6ba3d50bmsh85ba12c29d2cc3cp1cd314jsnd37ec2a679b7');
+    options.headers.append('X-RapidAPI-Host', 'climate-news-feed.p.rapidapi.com');
+    
+    try {
+        const response = await fetch(url, options);
+        const result = await response.json(); // Parse JSON response
+        displayNews(result.articles); // Modify this line
+    } catch (error) {
+        console.error(error);
+    }
 });
 
-async function getRecommendations(genre) {
-    try {
-        const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=${genre}`);
-        const data = await response.json();
-        displayMovies(data.results);
-    } catch (error) {
-        console.error('Error fetching movie data:', error);
+function displayNews(data) {
+    newsListContainer.innerHTML = ''; // Clear previous content
+    
+    if (Array.isArray(data)) {
+        for (const news of data) {
+            const newsDiv = document.createElement('div');
+            newsDiv.className = 'news-item';
+            
+            const newsTitle = document.createElement('h2');
+            newsTitle.textContent = news.title;
+            
+            const newsSource = document.createElement('p');
+            newsSource.textContent = 'Source: ' + news.source;
+            
+            const newsDate = document.createElement('p');
+            newsDate.textContent = 'Publish Date: ' + news.published;
+            
+            const newsLink = document.createElement('a');
+            newsLink.href = news.url;
+            newsLink.textContent = 'Read More';
+            
+            newsDiv.appendChild(newsTitle);
+            newsDiv.appendChild(newsSource);
+            newsDiv.appendChild(newsDate);
+            newsDiv.appendChild(newsLink);
+            
+            newsListContainer.appendChild(newsDiv);
+        }
+    } else {
+        newsListContainer.textContent = 'No news available.';
     }
-}
-
-function displayMovies(movies) {
-    movieList.innerHTML = '';
-    movies.forEach(movie => {
-        const movieDiv = document.createElement('div');
-        movieDiv.classList.add('movie');
-        movieDiv.innerHTML = `
-            <h2>${movie.title}</h2>
-            <p>Release Date: ${movie.release_date}</p>
-            <p>Rating: ${movie.vote_average}</p>
-            <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt="${movie.title} Poster">
-        `;
-        movieList.appendChild(movieDiv);
-    });
 }
